@@ -15,6 +15,11 @@ class CreateWinesTable extends Migration
     {
         Schema::create('wines', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name', 50);
+            $table->text('description');
+            $table->string('color', 10);
+            $table->string('grape_variety', 50);
+            $table->string('country', 50);
             $table->timestamps();
         });
     }
