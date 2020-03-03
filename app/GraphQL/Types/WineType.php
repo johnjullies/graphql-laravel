@@ -14,7 +14,7 @@ class WineType extends GraphQLType
         'model' => Wine::class
     ];
 
-    public function fields()
+    public function fields(): array
     {
         return [
             'id' => [

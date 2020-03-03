@@ -5,6 +5,7 @@ namespace App\GraphQL\Queries;
 use App\Wine;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Query;
+use Rebing\GraphQL\Support\Facades\GraphQL;
 
 class WineQuery extends Query
 {
@@ -12,12 +13,12 @@ class WineQuery extends Query
         'name' => 'wine',
     ];
 
-    public function type()
+    public function type(): Type
     {
         return GraphQL::type('Wine');
     }
 
-    public function args()
+    public function args(): array
     {
         return [
             'id' => [

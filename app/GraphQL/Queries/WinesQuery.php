@@ -5,6 +5,7 @@ namespace App\GraphQL\Queries;
 use App\Wine;
 use GraphQL\Type\Definition\Type;
 use Rebing\GraphQL\Support\Query;
+use Rebing\GraphQL\Support\Facades\GraphQL;
 
 class WinesQuery extends Query
 {
@@ -12,7 +13,7 @@ class WinesQuery extends Query
         'name' => 'wines',
     ];
 
-    public function type()
+    public function type(): Type
     {
         return Type::listOf(GraphQL::type('Wine'));
     }
